@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sample Site • GitHub Pages Demo</title>
+  <meta name="description" content="A beginner-friendly sample site for GitHub Pages (HTML, CSS, JS)" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="logo" class="logo" />
+        <h1>SampleSite</h1>
+      </div>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="controls">
+        <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero">
+      <h2>Welcome to your sample website</h2>
+      <p>Deploy this site to GitHub Pages and use it as a starter template or playground.</p>
+      <div class="cta-row">
+        <a class="btn" href="#features">Explore features</a>
+        <a class="btn ghost" href="https://github.com/" target="_blank" rel="noopener">Open GitHub</a>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <h3>Interactive Features</h3>
+
+      <article class="card">
+        <h4>Simple Todo (Stored locally)</h4>
+        <p>Add tasks; they persist in your browser.</p>
+        <div id="todo-app">
+          <form id="todo-form">
+            <input id="todo-input" placeholder="Add a task..." required />
+            <button type="submit">Add</button>
+          </form>
+          <ul id="todo-list" aria-live="polite"></ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <h4>Fetch Demo</h4>
+        <p>Fetches a random joke from an open API (client-side).</p>
+        <div id="fetch-demo">
+          <button id="fetch-joke">Get a joke</button>
+          <p id="joke-output" class="muted">Click the button to load a joke.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <h4>Responsive layout + Dark mode</h4>
+        <p>Toggle with the moon/sun button in the header. Theme is saved in localStorage.</p>
+      </article>
+    </section>
+
+    <section id="contact" class="contact card">
+      <h3>Contact</h3>
+      <p>If you want, use this mailto link to email (client opens your mail app):</p>
+      <a class="btn" href="mailto:your-email@example.com?subject=Hello%20from%20SampleSite">Email me</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> SampleSite — Built for GitHub Pages demo</small>
+      <div class="footer-links">
+        <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
