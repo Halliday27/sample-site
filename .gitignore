@@ -1,2 +1,40 @@
 # Google App Engine generated folder
 appengine-generated/
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Node (if you ever use node tools)
+node_modules/
+
+# Build / output
+dist/
+build/
+.cache/
+
+# Environment / secrets
+.env
+.env.local
+
+# Logs and temp
+*.log
+*.tmp
+*.swp
+*~ 
+
+# Backups
+*.backup
+*.bak
+
+# Project-specific (example: you created a backup earlier)
+assets/logo.svg.backup
