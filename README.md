@@ -15,4 +15,3 @@ Open `index.html` in a browser. For local development with a simple server:
 # python 3.x
 python -m http.server 8000
 # then open http://localhost:8000
-# then open http://localhost:8000
