@@ -1,0 +1,15 @@
+# Auto-detect text files, normalize to LF in the repo
+* text=auto
+
+# Prevent line ending conversions for binary assets (treat SVG as binary if you prefer)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+
+# If you want to keep SVGs as text but normalize to LF:
+#*.svg text eol=lf
+
+# Ensure shell scripts keep LF
+*.sh text eol=lf
