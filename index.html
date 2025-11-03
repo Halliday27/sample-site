@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sample Site • GitHub Pages Demo</title>
-  <meta name="description" content="A beginner-friendly sample site for GitHub Pages (HTML, CSS, JS)" />
+  <title>Git & GitHub Learning Site</title>
+  <meta name="description" content="Learn Git & GitHub basics in an interactive website example." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -12,11 +12,11 @@
     <div class="container header-row">
       <div class="brand">
         <img src="assets/logo.svg" alt="logo" class="logo" />
-        <h1>SampleSite</h1>
+        <h1>GitLearn</h1>
       </div>
       <nav class="nav">
         <a href="#home">Home</a>
-        <a href="#features">Features</a>
+        <a href="#git">Learn Git</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -27,58 +27,94 @@
   </header>
 
   <main class="container">
+    <!-- HOME -->
     <section id="home" class="hero">
-      <h2>Welcome to your sample website</h2>
-      <p>Deploy this site to GitHub Pages and use it as a starter template or playground.</p>
+      <h2>Welcome to GitLearn 🔧</h2>
+      <p>A simple, interactive website to help you learn Git and GitHub while seeing web development in action!</p>
       <div class="cta-row">
-        <a class="btn" href="#features">Explore features</a>
-        <a class="btn ghost" href="https://github.com/" target="_blank" rel="noopener">Open GitHub</a>
+        <a class="btn" href="#git">Start Learning Git</a>
+        <a class="btn ghost" href="https://github.com/" target="_blank">Go to GitHub</a>
       </div>
     </section>
 
-    <section id="features" class="features">
-      <h3>Interactive Features</h3>
+    <!-- GIT LEARNING SECTION -->
+    <section id="git" class="features">
+      <h3>Learn Git Step by Step 💡</h3>
 
       <article class="card">
-        <h4>Simple Todo (Stored locally)</h4>
-        <p>Add tasks; they persist in your browser.</p>
-        <div id="todo-app">
-          <form id="todo-form">
-            <input id="todo-input" placeholder="Add a task..." required />
-            <button type="submit">Add</button>
-          </form>
-          <ul id="todo-list" aria-live="polite"></ul>
+        <h4>1️⃣ Initialize a Git repository</h4>
+        <p>Create a new repository inside your project folder.</p>
+        <div class="code-snippet">
+          <code>git init</code>
+          <button class="copy-btn" data-copy="git init">📋</button>
         </div>
       </article>
 
       <article class="card">
-        <h4>Fetch Demo</h4>
-        <p>Fetches a random joke from an open API (client-side).</p>
-        <div id="fetch-demo">
-          <button id="fetch-joke">Get a joke</button>
-          <p id="joke-output" class="muted">Click the button to load a joke.</p>
+        <h4>2️⃣ Add files to staging</h4>
+        <p>Prepare your files to be committed:</p>
+        <div class="code-snippet">
+          <code>git add .</code>
+          <button class="copy-btn" data-copy="git add .">📋</button>
         </div>
       </article>
 
       <article class="card">
-        <h4>Responsive layout + Dark mode</h4>
-        <p>Toggle with the moon/sun button in the header. Theme is saved in localStorage.</p>
+        <h4>3️⃣ Commit your changes</h4>
+        <p>Save a snapshot of your project state:</p>
+        <div class="code-snippet">
+          <code>git commit -m "Initial commit"</code>
+          <button class="copy-btn" data-copy='git commit -m "Initial commit"'>📋</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <h4>4️⃣ Connect to GitHub</h4>
+        <p>Link your local repo to a remote GitHub repo:</p>
+        <div class="code-snippet">
+          <code>git remote add origin https://github.com/&lt;username&gt;/&lt;repo&gt;.git</code>
+          <button class="copy-btn" data-copy="git remote add origin https://github.com/<username>/<repo>.git">📋</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <h4>5️⃣ Push your project</h4>
+        <p>Upload your work to GitHub:</p>
+        <div class="code-snippet">
+          <code>git push -u origin main</code>
+          <button class="copy-btn" data-copy="git push -u origin main">📋</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <h4>🌿 Create and switch branches</h4>
+        <p>Branches let you experiment safely:</p>
+        <div class="code-snippet">
+          <code>git checkout -b feature-branch</code>
+          <button class="copy-btn" data-copy="git checkout -b feature-branch">📋</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <h4>⚡ Merge branch back to main</h4>
+        <div class="code-snippet">
+          <code>git checkout main && git merge feature-branch</code>
+          <button class="copy-btn" data-copy="git checkout main && git merge feature-branch">📋</button>
+        </div>
       </article>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="contact card">
       <h3>Contact</h3>
-      <p>If you want, use this mailto link to email (client opens your mail app):</p>
-      <a class="btn" href="mailto:your-email@example.com?subject=Hello%20from%20SampleSite">Email me</a>
+      <p>Questions or feedback? Email me!</p>
+      <a class="btn" href="mailto:your-email@example.com?subject=GitLearn Feedback">Email me</a>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <small>© <span id="year"></span> SampleSite — Built for GitHub Pages demo</small>
-      <div class="footer-links">
-        <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>
-      </div>
+      <small>© <span id="year"></span> GitLearn — Made for learning Git & GitHub</small>
     </div>
   </footer>
 

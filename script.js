@@ -4,9 +4,6 @@
 const $ = sel => document.querySelector(sel);
 const $$ = sel => Array.from(document.querySelectorAll(sel));
 
-// ---------- Year in footer ----------
-document.getElementById('year').textContent = new Date().getFullYear();
-
 // ---------- Theme (dark/light) ----------
 const THEME_KEY = 'sampleSiteTheme';
 const themeToggle = document.getElementById('theme-toggle');
@@ -22,12 +19,12 @@ function applyTheme(theme){
 }
 
 // read persisted theme, default to system preference
-let saved = localStorage.getItem(THEME_KEY);
-if(!saved){
+let currentTheme = localStorage.getItem(THEME_KEY);
+if(!currentTheme){
   const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  saved = prefersDark ? 'dark' : 'light';
+  currentTheme = prefersDark ? 'dark' : 'light';
 }
-applyTheme(saved);
+applyTheme(currentTheme);
 
 themeToggle.addEventListener('click', () => {
   const cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
@@ -134,3 +131,50 @@ async function fetchJoke(){
   }
 }
 jokeBtn.addEventListener('click', fetchJoke);
+
+// === Copy to clipboard logic ===
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const text = btn.getAttribute('data-copy');
+    navigator.clipboard.writeText(text).then(() => {
+      const original = btn.textContent;
+      btn.textContent = '✅';
+      setTimeout(() => btn.textContent = original, 1200);
+    });
+  });
+});
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Theme toggle (same as before)
+const themeBtn = document.getElementById('theme-toggle');
+const THEME_KEY = 'themeMode';
+function applyTheme(theme) {
+  if (theme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeBtn.textContent = '☀️';
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    themeBtn.textContent = '🌙';
+  }
+}
+let saved = localStorage.getItem(THEME_KEY) || 'light';
+applyTheme(saved);
+themeBtn.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  const next = current === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+  localStorage.setItem(THEME_KEY, next);
+});
+
+// === Copy to clipboard logic ===
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const text = btn.getAttribute('data-copy');
+    navigator.clipboard.writeText(text).then(() => {
+      const original = btn.textContent;
+      btn.textContent = '✅';
+      setTimeout(() => btn.textContent = original, 1200);
+    });
+  });
+});
