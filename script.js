@@ -33,6 +33,8 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem(THEME_KEY, next);
 });
 
+// Year in footer
+document.getElementById('year').textContent = new Date().getFullYear();
 // ---------- Todo app ----------
 const TODO_KEY = 'sampleSiteTodos';
 const todoForm = document.getElementById('todo-form');
@@ -143,38 +145,4 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
     });
   });
 });
-// Year
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// Theme toggle (same as before)
-const themeBtn = document.getElementById('theme-toggle');
-const THEME_KEY = 'themeMode';
-function applyTheme(theme) {
-  if (theme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    themeBtn.textContent = '☀️';
-  } else {
-    document.documentElement.removeAttribute('data-theme');
-    themeBtn.textContent = '🌙';
-  }
-}
-let saved = localStorage.getItem(THEME_KEY) || 'light';
-applyTheme(saved);
-themeBtn.addEventListener('click', () => {
-  const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-  const next = current === 'dark' ? 'light' : 'dark';
-  applyTheme(next);
-  localStorage.setItem(THEME_KEY, next);
-});
-
-// === Copy to clipboard logic ===
-document.querySelectorAll('.copy-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const text = btn.getAttribute('data-copy');
-    navigator.clipboard.writeText(text).then(() => {
-      const original = btn.textContent;
-      btn.textContent = '✅';
-      setTimeout(() => btn.textContent = original, 1200);
-    });
-  });
-});
+ 
